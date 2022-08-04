@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clustering Analysis Dashboard</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+</head>
+<body>
+
+    <header>
+    </header>
+
+    <main class="dbg">
+        <hgroup>
+            <h1>Clustering Analysis Dashboard</h1>
+            <ul role="breadcrumb">
+                <li>Pretest - UTS</li> |
+                <li>Exercises - UTS</li> |
+                <li>Posttest - UTS</li>
+            </ul>
+        </hgroup>
+
+        <section>
+            <dl>
+                <dt>Total Students</dt>
+                {% if statistic_value %}
+                    <dd>{{statistic_value['student']}}</dd>
+                {% endif %}
+            </dl>
+            <dl>
+                <dt>Total Tests</dt>
+                {% if statistic_value %}
+                    <dd>{{statistic_value['test']}}</dd>
+                {% endif %}
+            </dl>
+            <dl>
+                <dt>Total Sessions</dt>
+                {% if statistic_value %}
+                    <dd>{{statistic_value['session']}}</dd>
+                {% endif %}
+            </dl>
+        </section>
+        
+        <section>
+            <article>
+                <img src="{{ url_for('static',filename='images/scatter.png') }}">
+            </article>
+            <article><br/><br/>
+                <img src="{{ url_for('static',filename='images/displot0.png') }}" width="30%">
+                <img src="{{ url_for('static',filename='images/displot1.png') }}" width="30%">
+                <img src="{{ url_for('static',filename='images/displot2.png') }}" width="30%">
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <img src="{{ url_for('static',filename='images/pie0.png') }}">
+                <img src="{{ url_for('static',filename='images/pie1.png') }}">
+                <img src="{{ url_for('static',filename='images/pie2.png') }}">
+            </article>
+            <article>
+                <img src="{{ url_for('static',filename='images/scatter_normal.png') }}">
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <small>Copyright © 2022 bluejedi</small>
+    </footer>
+
+</body>
+</html>
